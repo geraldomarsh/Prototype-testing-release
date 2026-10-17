@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Football placeholder">
+  <defs><radialGradient id="g" cx="38%" cy="32%" r="75%"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#c9ccd1"/></radialGradient></defs>
+  <circle cx="100" cy="100" r="94" fill="url(#g)" stroke="#2b2f36" stroke-width="5"/>
+  <polygon points="100,62 128,82 117,114 83,114 72,82" fill="#2b2f36"/>
+  <g stroke="#2b2f36" stroke-width="5" stroke-linecap="round">
+    <line x1="100" y1="62" x2="100" y2="14"/><line x1="128" y1="82" x2="172" y2="64"/>
+    <line x1="117" y1="114" x2="146" y2="154"/><line x1="83" y1="114" x2="54" y2="154"/><line x1="72" y1="82" x2="28" y2="64"/>
+  </g>
+  <g fill="#2b2f36"><polygon points="100,14 82,26 90,40 110,40 118,26"/><polygon points="172,64 168,86 182,96 194,84 188,66"/>
+  <polygon points="146,154 128,160 126,178 144,184 156,170"/><polygon points="54,154 72,160 74,178 56,184 44,170"/><polygon points="28,64 32,86 18,96 6,84 12,66"/></g>
+  <text x="100" y="196" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" font-weight="700" fill="#888">REPLACE: images/football.svg</text>
+</svg>

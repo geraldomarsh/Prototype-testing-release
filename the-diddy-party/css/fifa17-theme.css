@@ -1,0 +1,53 @@
+/* FIFA 17 black & yellow menu theme.
+   Link AFTER style.css (and admin.css):
+   <link rel="stylesheet" href="css/fifa17-theme.css">
+   Remove the link to go back to the default theme. */
+:root{
+  --bg:#0a0a0a; --panel:#141414; --panel2:#1c1c1c; --line:#2e2e2e;
+  --green:#ffe600;   /* main accent -> FIFA yellow */
+  --green2:#ffc400;  /* darker yellow */
+  --white:#ffffff; --muted:#9a9a9a; --red:#ff4d4d; --gold:#ffe600;
+}
+html{background:#0a0a0a}
+body{
+  min-height:100vh;color:var(--white);
+  background:
+    linear-gradient(115deg,transparent 0 62%,#ffe60010 62% 64%,transparent 64% 70%,#ffe6000a 70% 71%,transparent 71%),
+    radial-gradient(900px 500px at 90% -10%,#ffe60018,transparent 60%),
+    #0a0a0a;
+}
+h1,h2,h3,.nav a,button,.btn,.eyebrow,.tag{text-transform:uppercase;letter-spacing:.04em}
+h1,h2{font-style:italic;text-shadow:none}
+.eyebrow,.tag{color:var(--green)}
+
+/* menu-style panels: black, hard edges, yellow top bar, slanted corner */
+.panel,.stat-card,.modal-card,.admin-player-row{
+  background:linear-gradient(180deg,#1a1a1a,#0f0f0f);
+  border:1px solid var(--line);border-top:3px solid var(--green);border-radius:0;
+  clip-path:polygon(0 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%);
+  box-shadow:none;
+}
+button,.btn{
+  background:var(--green);color:#000;border:none;border-radius:0;font-weight:800;font-style:italic;
+  clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%);box-shadow:none;
+}
+button:hover,.btn:hover{background:#fff}
+
+/* player cards: black with yellow trim */
+.player-card{
+  background:linear-gradient(160deg,#1f1f1f,#0b0b0b 70%);
+  border:1px solid #3a3a3a;border-top:4px solid var(--green);border-radius:0;
+  clip-path:polygon(0 0,100% 0,100% calc(100% - 18px),calc(100% - 18px) 100%,0 100%);
+  box-shadow:none;
+}
+.player-card:after{border-color:#ffe6001f;box-shadow:0 0 0 12px #ffe6000d,0 0 0 25px #ffe60007}
+.player-card .rating{color:var(--green);-webkit-text-fill-color:var(--green);background:none;font-style:italic}
+.player-card .position{color:#bdbdbd}
+.player-card h3{color:#fff;text-transform:uppercase;font-style:italic}
+.player-card .nickname{color:var(--green)}
+.player-card .tag{background:var(--green);color:#000;border:none;border-radius:0}
+.player-photo{border:2px solid var(--green);border-radius:0;box-shadow:none;background:#000}
+.player-card .mini-stat span{color:#9a9a9a}
+.player-card .mini-stat b{color:#fff}
+.avatar{background:var(--green);border-color:#fff;color:#000}
+.ovr,.goal-count{color:var(--green);-webkit-text-fill-color:var(--green);background:none}

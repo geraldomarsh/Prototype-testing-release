@@ -1,0 +1,52 @@
+/* Frosted / icy glass theme.
+   Link AFTER style.css (and admin.css):
+   <link rel="stylesheet" href="css/frosted-theme.css">
+   Remove the link to go back to the default theme. */
+:root{
+  --bg:#0b1f33; --panel:#ffffff1a; --panel2:#ffffff26; --line:#ffffff40;
+  --green:#8fe3ff;   /* main accent -> ice blue */
+  --green2:#c9f3ff;  /* pale frost */
+  --white:#f4fbff; --muted:#a9c6da; --red:#ff8a9b; --gold:#e6f7ff;
+}
+html{background:#0b1f33}
+body{
+  min-height:100vh;color:var(--white);
+  background:
+    radial-gradient(700px 500px at 15% 5%,#8fe3ff55,transparent 60%),
+    radial-gradient(800px 600px at 90% 35%,#b6d8ff44,transparent 60%),
+    radial-gradient(700px 600px at 20% 85%,#6fc2e844,transparent 60%),
+    linear-gradient(180deg,#0b1f33 0%,#14405f 50%,#1e6a8f 100%);
+  background-attachment:scroll;
+}
+h1,h2,h3{text-shadow:0 0 22px #8fe3ff66}
+.eyebrow,.tag{color:#c9f3ff}
+
+/* frosted glass panels */
+.panel,.stat-card,.modal-card,.admin-player-row,table{
+  background:linear-gradient(145deg,#ffffff2e,#ffffff0f);
+  border:1px solid #ffffff55;border-radius:18px;
+  -webkit-backdrop-filter:blur(14px) saturate(140%);backdrop-filter:blur(14px) saturate(140%);
+  box-shadow:0 8px 30px #04101e66, inset 0 1px 0 #ffffff80, inset 0 0 20px #ffffff0d;
+}
+.nav,header{-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);background:#0b1f3366}
+button,.btn{
+  background:linear-gradient(180deg,#e6f9ff,#8fe3ff);color:#06283d;border:1px solid #fff;
+  box-shadow:0 4px 16px #8fe3ff66, inset 0 1px 0 #fff;
+}
+button:hover,.btn:hover{background:#fff}
+
+/* player cards: icy glass with a frost sheen */
+.player-card{
+  background:linear-gradient(150deg,#ffffff38,#ffffff0d 60%,#8fe3ff22);
+  border:1px solid #ffffff66;border-radius:20px;
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  box-shadow:0 10px 30px #04101e66, inset 0 1px 0 #ffffffa0, inset 0 0 24px #ffffff12;
+}
+.player-card:after{border-color:#ffffff2a;box-shadow:0 0 0 12px #ffffff10,0 0 0 25px #ffffff08}
+.player-card .rating{color:#fff;-webkit-text-fill-color:#fff;background:none;text-shadow:0 0 14px #8fe3ffaa}
+.player-card .tag{background:#ffffff2a;border:1px solid #ffffff55;color:#fff}
+.player-photo{border:2px solid #ffffffaa;border-radius:14px;box-shadow:0 0 18px #8fe3ff66;background:#ffffff1a}
+.player-card .nickname{color:#c9f3ff}
+.avatar{background:linear-gradient(135deg,#e6f9ff,#8fe3ff);border-color:#fff;color:#06283d}
+.ovr,.goal-count{color:#fff;-webkit-text-fill-color:#fff;background:none;text-shadow:0 0 12px #8fe3ff99}
+.site-header{background:#0e2a44aa;border-bottom:1px solid #ffffff40;-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}

@@ -1,0 +1,56 @@
+{
+  "admin": {
+    "code": "A7G-EED"
+  },
+  "players": [
+    {
+      "id": 1,
+      "name": "Geraldo",
+      "code": "B5C-X3P"
+    },
+    {
+      "id": 2,
+      "name": "Luca",
+      "code": "Y7M-FS5"
+    },
+    {
+      "id": 3,
+      "name": "Mpho",
+      "code": "VG5-J9Y"
+    },
+    {
+      "id": 4,
+      "name": "Tariq",
+      "code": "ZUY-ZVP"
+    },
+    {
+      "id": 5,
+      "name": "Dan",
+      "code": "V8G-7G5"
+    },
+    {
+      "id": 6,
+      "name": "Stefan",
+      "code": "9TT-WAE"
+    },
+    {
+      "id": 7,
+      "name": "Kyle",
+      "code": "4WG-4Q4"
+    }
+  ],
+  "poll": {
+    "id": 1,
+    "title": "Who cooked today?",
+    "open": true,
+    "createdAt": 1792148405281
+  },
+  "votes": [],
+  "sessions": {
+    "f08bb6dc8e1c8ac17caae76c0e0edf34ed4171acd7f479fc": {
+      "role": "admin",
+      "playerId": null,
+      "exp": 1794740536974
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "the-diddy-party",
+  "version": "1.0.0",
+  "private": true,
+  "description": "5-a-side football club site with member sign-in, voting and join requests",
+  "scripts": { "dev": "node dev-server.js", "start": "node dev-server.js" },
+  "engines": { "node": ">=18" }
+}

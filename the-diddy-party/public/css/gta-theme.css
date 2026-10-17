@@ -1,0 +1,19 @@
+/* GTA VI / Vice City theme. Delete this file (and its <link> tags) to go back to the green theme. */
+:root{
+  --bg:#14061f; --panel:#221036; --panel2:#2d1648; --line:#4a2a6e;
+  --green:#ff4fa3;   /* main accent -> hot pink */
+  --green2:#ff8a3d;  /* secondary accent -> sunset orange */
+  --white:#fff4ea; --muted:#b9a3cc; --red:#ff5b5b; --gold:#ffc857;
+  --teal:#2ee6d6;
+}
+html{background:#14061f}
+body{background:linear-gradient(180deg,#14061f 0%,#2a0e45 40%,#4a1850 75%,#7a2a62 100%);min-height:100vh;color:var(--white)}
+.player-card{background:linear-gradient(145deg,#33195a,#1d0d33 70%);border-color:#6a3a9a}
+.player-card:after{border-color:#ff4fa326;box-shadow:0 0 0 12px #ff4fa312,0 0 0 25px #ff4fa30a}
+.player-photo{border-color:#ff4fa3;box-shadow:0 0 18px #ff4fa355}
+.avatar{background:linear-gradient(135deg,#ff4fa3,#ff8a3d);border-color:#ffb36b;color:#1a0b2e}
+.panel,.stat-card,.modal-card,.admin-player-row{border-color:var(--line)}
+.rating,.goal-count,.ovr{background:linear-gradient(90deg,#ff4fa3,#ff8a3d);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+h1,h2{text-shadow:0 0 22px #ff4fa366}
+.tag,.eyebrow{color:var(--teal)}
+button,.btn{box-shadow:0 0 16px #ff4fa355}

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Player 5 photo placeholder">
+  <rect width="200" height="200" rx="16" fill="#2a1245"/>
+  <circle cx="100" cy="78" r="38" fill="#5a3a85"/>
+  <path d="M30 200c0-44 31-72 70-72s70 28 70 72z" fill="#5a3a85"/>
+  <text x="100" y="188" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#ff4fa3">REPLACE: player-5</text>
+</svg>
