@@ -49,7 +49,7 @@
       fetch("/api/register", {
         method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: name, nickname: $("joinNick").value, position: $("joinPos").value, image: photo || undefined, website: $("joinWebsite").value,
-          pace: $("joinPace").1, shooting: $("joinSho").1, passing: $("joinPas").1, defending: $("joinDef").1 })
+          pace: $("joinPace").value, shooting: $("joinSho").value, passing: $("joinPas").value, defending: $("joinDef").value })
       }).then(function (r) { return r.json().catch(function () { return {}; }).then(function (d) { if (!r.ok) throw new Error(d.error || "Something went wrong."); return d; }); })
         .then(function (d) {
           $("joinFields").hidden = true; $("joinSubmit").hidden = true; $("joinCancel").textContent = "Done";
