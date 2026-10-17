@@ -32,8 +32,7 @@
     $("joinBtn").addEventListener("click", function () { msg(""); dlg.showModal(); });
     $("joinClose").addEventListener("click", function () { dlg.close(); });
     $("joinCancel").addEventListener("click", function () { dlg.close(); });
-    ["joinPace", "joinSho", "joinPas", "joinDef"].forEach(function (id) { $(id).addEventListener("input", ovr); });
-    ovr();
+  
 
     $("joinPhoto").addEventListener("change", function () {
       var f = this.files && this.files[0]; photo = "";
