@@ -2,7 +2,7 @@
    Data: TheSportsDB (free test key "3") for teams/fixtures, Google News RSS (via rss2json) for news.
    To add a league, add one line to LEAGUES. */
 (function () {
-  var API = "https://www.thesportsdb.com/api/v1/json/3/";
+  var API = "https://www.thesportsdb.com/api/v1/json/123/";
   var KEY = "diddyFavTeam";
   var LEAGUES = [
     { id: "4328", name: "English Premier League", label: "Premier League (England)" },
