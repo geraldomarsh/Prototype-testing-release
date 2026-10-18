@@ -6,7 +6,7 @@ const crypto = require("crypto");
 const { getStore } = require("./store");
 
 const ALPHABET = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";          // no 0/O/1/I/L to avoid mix-ups
-const POSITIONS = ["ST", "LW", "RW", "CM", "CB", "GK", "ALL"];
+const POSITIONS = ["ST", "LW", "RW", "RM", "LM", "CDM", "CAM", "CM", "RB", "LB", "CB", "GK"];
 const SESSION_MS = 30 * 24 * 3600 * 1000;
 const MAX_PENDING = 40, MAX_IMG_BYTES = 120 * 1024;
 const DEFAULT_IMG = "images/players/default.svg";
