@@ -105,7 +105,7 @@ const approved = db => db.players.filter(p => p.status === "approved");
 const player = (db, id) => db.players.find(p => p.id === id);
 function cardOf(p) {
   return { id: p.id, name: p.name, nickname: p.nickname || "", position: p.position, rating: p.rating, goals: p.goals, assists: p.assists,
-    pace: p.pace, shooting: p.shooting, passing: p.passing, defending: p.defending, image: p.image || DEFAULT_IMG };
+    pace: p.pace, shooting: p.shooting, passing: p.passing, defending: p.defending, physical: p.physical, image: p.image || DEFAULT_IMG };
 }
 function pollView(db, me) {
   const pid = db.poll.id, ap = approved(db), ids = new Set(ap.map(p => p.id));
