@@ -58,7 +58,7 @@ function renderPlayers() {
       <div class="mini-stats">
         <div class="mini-stat"><span>PAC</span><b>${player.pace}</b></div><div class="mini-stat"><span>SHO</span><b>${player.shooting}</b></div>
         <div class="mini-stat"><span>PAS</span><b>${player.passing}</b></div><div class="mini-stat"><span>DEF</span><b>${player.defending}</b></div>
-        <div class="mini-stat"><span>AST</span><b>${player.assists}</b></div><div class="mini-stat"><span>VIBE</span><b>${Math.min(99, Math.round((player.rating + player.pace) / 2))}</b></div>
+        <div class="mini-stat"><span>AST</span><b>${player.assists}</b></div><div class="mini-stat"><span>PHY</span><b>${player.physical}</b></div>
       </div>
     </article>`).join("");
   const note = document.querySelector("#myCardNote");
