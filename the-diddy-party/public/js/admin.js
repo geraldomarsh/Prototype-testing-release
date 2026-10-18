@@ -77,7 +77,7 @@
       try {
         var body = { id: $("#playerId").value || undefined, name: $("#playerName").value.trim(), nickname: $("#playerNickname").value.trim(), position: $("#playerPosition").value,
           image: $("#playerImage").value.trim() || undefined, rating: num("playerRating", 1, 99), goals: num("playerGoals", 0, 9999), assists: num("playerAssists", 0, 9999),
-          pace: num("playerPace", 1, 99), shooting: num("playerShooting", 1, 99), passing: num("playerPassing", 1, 99), defending: num("playerDefending", 1, 99) };
+          pace: num("playerPace", 1, 99), shooting: num("playerShooting", 1, 99), passing: num("playerPassing", 1, 99), defending: num("playerDefending", 1, 99), physical: num("playerPhysical", 1, 99) };
         if (!body.name) throw Error("Player name is required.");
         var isNew = !body.id;
         api("/admin/player", body).then(function () { resetForm(); reload(); toast(isNew ? "Player added to the circus. 🎪" : "Player updated. Stats department online."); }).catch(function (err) { toast(err.message); });
