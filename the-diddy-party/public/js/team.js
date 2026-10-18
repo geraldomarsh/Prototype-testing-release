@@ -5,7 +5,7 @@
   var API = "https://www.thesportsdb.com/api/v1/json/123/";
   var KEY = "diddyFavTeam";
   var LEAGUES = [
-    { id: "4328", name: "English Premier League", label: "Premier League (za)" },
+    { id: "4328", name: "English Premier League", label: "Premier League (England)" },
     { id: "4335", name: "Spanish La Liga",        label: "La Liga (Spain)" },
     { id: "4332", name: "Italian Serie A",        label: "Serie A (Italy)" },
     { id: "4331", name: "German Bundesliga",      label: "Bundesliga (Germany)" },
