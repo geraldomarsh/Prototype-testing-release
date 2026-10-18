@@ -102,3 +102,14 @@
   border-radius:0;
   display:block
 }
+
+/* feedback */
+.fab{position:fixed;right:14px;bottom:14px;z-index:20;border:1px solid #46523b;background:var(--panel2);color:var(--white);border-radius:999px;padding:11px 16px;font-weight:800;font-size:.8rem;box-shadow:0 6px 24px #0008}
+.fab:hover{border-color:var(--green)}
+.modal textarea{width:100%;background:#10140f;border:1px solid #3d4737;color:var(--white);border-radius:9px;padding:12px;outline:none;font:inherit;resize:vertical}
+.modal textarea:focus{border-color:var(--green)}
+.fb-list{display:grid;gap:8px;margin:10px 0}
+.fb-item{background:#10140f;border:1px solid #3b4632;border-radius:12px;padding:10px 12px;font-size:.85rem}
+.fb-item.is-done{opacity:.55}
+.fb-meta{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-size:.7rem;color:var(--muted);margin-bottom:6px}
+.fb-msg{white-space:pre-wrap;overflow-wrap:anywhere;margin:0 0 8px}
