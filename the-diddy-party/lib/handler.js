@@ -105,7 +105,7 @@ const approved = db => db.players.filter(p => p.status === "approved");
 const player = (db, id) => db.players.find(p => p.id === id);
 function cardOf(p) {
   return { id: p.id, name: p.name, nickname: p.nickname || "", position: p.position, rating: p.rating, goals: p.goals, assists: p.assists,
-    pace: p.pace, shooting: p.shooting, passing: p.passing, defending: p.defending, physical: p.physical, image: p.image || DEFAULT_IMG };
+    pace: p.pace, shooting: p.shooting, passing: p.passing, defending: p.defending, physical: p.physical || 0, image: p.image || DEFAULT_IMG };
 }
 function pollView(db, me) {
   const pid = db.poll.id, ap = approved(db), ids = new Set(ap.map(p => p.id));
@@ -326,7 +326,7 @@ async function admin(req, res, p, q) {
     if (b.image && b.image !== image) { if (!IMG_PATH_RE.test(b.image)) throw new HttpError(400, "Photo must be a file in images/players/ (e.g. images/players/Ethan.jpg)."); image = b.image; }
     const card = { name, nickname: text(b.nickname || "", 0, 28, "Nickname"), position: POSITIONS.includes(b.position) ? b.position : "ALL", rating: int(b.rating, 1, 99, "Overall"),
       goals: int(b.goals, 0, 9999, "Goals"), assists: int(b.assists, 0, 9999, "Assists"), pace: int(b.pace, 1, 99, "Pace"), shooting: int(b.shooting, 1, 99, "Shooting"),
-      passing: int(b.passing, 1, 99, "Passing"), defending: int(b.defending, 1, 99, "Defending"), image };
+      passing: int(b.passing, 1, 99, "Passing"), defending: int(b.defending, 1, 99, "Defending"), physical: int(b.physical == null || b.physical === "" ? 0 : b.physical, 0, 99, "Physical"), image };
     if (ex) Object.assign(ex, card);
     else db.players.push(Object.assign({ id: Math.max(0, ...db.players.map(x => x.id)) + 1, code: newCode(db), status: "approved", createdAt: Date.now() }, card));
     return { status: 200, body: { ok: true } };
