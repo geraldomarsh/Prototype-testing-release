@@ -186,6 +186,23 @@
       </div>
       <p class="tiny" id="joinMsg" role="status"></p>
       <div class="modal-actions"><button type="button" class="button button-ghost" id="joinCancel">Close</button><button class="button button-green" id="joinSubmit" type="submit">Send my card ⚡</button></div>
+      <button type="button" class="fab" id="fbBtn" aria-label="Send feedback">💬 Feedback</button>
+  <dialog id="fbDialog" class="modal">
+    <form id="fbForm" class="modal-card" novalidate>
+      <button type="button" class="modal-close" id="fbClose" aria-label="Close">×</button>
+      <p class="eyebrow">TALK TO THE MANAGER</p><h2>Feedback</h2>
+      <div id="fbFields">
+        <label for="fbType">What's this about?</label>
+        <select id="fbType"><option value="bug">🐞 Something's broken</option><option value="question">❓ I have a question</option><option value="suggestion">💡 I have an idea</option></select>
+        <label for="fbMsg">Your message *</label>
+        <textarea id="fbMsg" rows="5" maxlength="800" placeholder="Tell us what happened, what you expected, and on which page."></textarea>
+        <p class="tiny muted"><span id="fbCount">0</span>/800</p>
+        <label for="fbName">Your name (optional)</label><input id="fbName" maxlength="30" autocomplete="off">
+        <label for="fbContact">How can we reply? (optional)</label><input id="fbContact" maxlength="60" autocomplete="off" placeholder="WhatsApp number or email">
+        <input id="fbWebsite" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" placeholder="Leave this empty">
+      </div>
+      <p class="tiny" id="fbMsgOut" role="status"></p>
+      <div class="modal-actions"><button type="button" class="button button-ghost" id="fbCancel">Close</button><button class="button button-green" id="fbSubmit" type="submit">Send ⚡</button></div>
     </form>
   </dialog>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
