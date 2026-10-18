@@ -149,10 +149,10 @@
 (function () {
   var BALLS = [
     { name: "Classic", src: "images/footballs/OG.png" },
+    { name: "Classic", src: "images/footballs/WC 2010.png" },
     { name: "Gold",    src: "images/footballs/Prem.png" },
     { name: "Neon",    src: "images/footballs/UCl Ball.png"},
     { name: "Classic", src: "images/footballs/La Liga.png" },
-    { name: "Classic", src: "images/footballs/WC 2010.png" }
     { name: "Classic", src: "images/footballs/WC 2026.png" }
   ];
   var KEY = "diddyBall";
