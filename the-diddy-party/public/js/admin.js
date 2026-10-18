@@ -50,13 +50,13 @@
   }
   function resetForm() {
     $("#playerForm").reset(); $("#playerId").value = "";
-    $("#playerRating").value = 75; ["#playerPace", "#playerShooting", "#playerPassing", "#playerDefending"].forEach(function (s) { $(s).value = 70; });
+    $("#playerRating").value = 75; ["#playerPace", "#playerShooting", "#playerPassing", "#playerDefending", "#playerPhysical"].forEach(function (s) { $(s).value = 70; });
     $("#playerGoals").value = 0; $("#playerAssists").value = 0;
     $("#savePlayerBtn").textContent = "＋ Add player"; $("#cancelEditBtn").hidden = true;
   }
   function edit(id) {
     var p = players.filter(function (x) { return x.id === +id; })[0]; if (!p) return;
-    var map = { playerId: "id", playerName: "name", playerNickname: "nickname", playerPosition: "position", playerImage: "image", playerRating: "rating", playerGoals: "goals", playerAssists: "assists", playerPace: "pace", playerShooting: "shooting", playerPassing: "passing", playerDefending: "defending" };
+    var map = { playerId: "id", playerName: "name", playerNickname: "nickname", playerPosition: "position", playerImage: "image", playerRating: "rating", playerGoals: "goals", playerAssists: "assists", playerPace: "pace", playerShooting: "shooting", playerPassing: "passing", playerDefending: "defending", playerPhysical: "physical" };
     Object.keys(map).forEach(function (f) { document.getElementById(f).value = p[map[f]] == null ? "" : p[map[f]]; });
     $("#savePlayerBtn").textContent = "Save player changes"; $("#cancelEditBtn").hidden = false; $("#playerManagement").scrollIntoView({ behavior: "smooth" });
   }
@@ -77,7 +77,7 @@
       try {
         var body = { id: $("#playerId").value || undefined, name: $("#playerName").value.trim(), nickname: $("#playerNickname").value.trim(), position: $("#playerPosition").value,
           image: $("#playerImage").value.trim() || undefined, rating: num("playerRating", 1, 99), goals: num("playerGoals", 0, 9999), assists: num("playerAssists", 0, 9999),
-          pace: num("playerPace", 1, 99), shooting: num("playerShooting", 1, 99), passing: num("playerPassing", 1, 99), defending: num("playerDefending", 1, 99), physical: num("playerPhysical", 1, 99) };
+          pace: num("playerPace", 1, 99), shooting: num("playerShooting", 1, 99), passing: num("playerPassing", 1, 99), defending: num("playerDefending", 1, 99), physical: num("playerPhysical", 1, 99)};
         if (!body.name) throw Error("Player name is required.");
         var isNew = !body.id;
         api("/admin/player", body).then(function () { resetForm(); reload(); toast(isNew ? "Player added to the circus. 🎪" : "Player updated. Stats department online."); }).catch(function (err) { toast(err.message); });
