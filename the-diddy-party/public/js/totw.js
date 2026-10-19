@@ -3,10 +3,10 @@
 (function () {
   var WEEK = "Week 12";
   var TOTW = [
-    { name: "Geraldo", role: "ST", note: "2 goals",       image: "images/players/player-1.svg", row: 1 },
-    { name: "Luca",    role: "LM", note: "3 assists",     image: "images/players/player-2.svg", row: 2 },
-    { name: "Mpho",    role: "RM", note: "Man of the match", image: "images/players/player-3.svg", row: 2 },
-    { name: "Dan",     role: "GK", note: "Clean sheet",   image: "images/players/player-5.svg", row: 3, gk: true }
+    { name: "Ronaldo", role: "LW",image: "images/players/Ronaldo.png", row: 1 },
+    { name: "Suarez",    role: "ST",image: "images/players/Suarez.png", row: 2 },
+    { name: "Messi",    role: "RW",image: "images/players/Messi.png", row: 2 },
+    { name: "Neymar",     role: "CAM",image: "images/players/Neymar.png", row: 3 }
   ];
   var el = document.getElementById("totwPitch"); if (!el) return;
   var wk = document.getElementById("totwWeek"); if (wk) wk.textContent = WEEK;
