@@ -155,7 +155,7 @@ async function route(req, res, p, q) {
   // ----- public -----
   if (m === "GET" && p === "/api/public") {
     const { db } = await store().load(seed);
-    return send(res, 200, { players: approved(db).map(cardOf), site: db.site }, { "Cache-Control": "no-cache", "Vercel-CDN-Cache-Control": "s-maxage=10, stale-while-revalidate=30" });
+    return send(res, 200, { players: approved(db).map(cardOf), site: db.site }, { "Cache-Control": "no-cache" });
   }
   if (m === "GET" && p === "/api/photo") {
     const k = String(q.get("k") || ""); if (!/^[a-f0-9]{16}$/.test(k)) throw new HttpError(404, "Not found");
