@@ -5,7 +5,7 @@
   var TOTW = [
     { name: "Ronaldo", role: "LW",image: "images/players/Ronaldo.png", row: 1 },
     { name: "Suarez",    role: "ST",image: "images/players/Suarez.png", row: 1 },
-    { name: "Messi",    role: "RW",note:"🐐", image: "images/players/Messi.png", row: 1, gk: true},
+    { name: "Messi",    role: "RW", note:"🐐", image: "images/players/Messi.png", row: 1, gk: true},
     { name: "Neymar",     role: "CAM",image: "images/players/Neymar.png", row: 1.5 }
   ];
   var el = document.getElementById("totwPitch"); if (!el) return;
