@@ -4,9 +4,9 @@
   var WEEK = "Week 12";
   var TOTW = [
     { name: "Ronaldo", role: "LW",image: "images/players/Ronaldo.png", row: 1 },
-    { name: "Suarez",    role: "ST",image: "images/players/Suarez.png", row: 2 },
-    { name: "Messi",    role: "RW",image: "images/players/Messi.png", row: 2 },
-    { name: "Neymar",     role: "CAM",image: "images/players/Neymar.png", row: 3 }
+    { name: "Suarez",    role: "ST",image: "images/players/Suarez.png", row: 1 },
+    { name: "Messi",    role: "RW",image: "images/players/Messi.png", row: 1 },
+    { name: "Neymar",     role: "CAM",image: "images/players/Neymar.png", row: 1.5 }
   ];
   var el = document.getElementById("totwPitch"); if (!el) return;
   var wk = document.getElementById("totwWeek"); if (wk) wk.textContent = WEEK;
