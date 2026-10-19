@@ -1,0 +1,20 @@
+/* Team of the Week: pitch layout */
+.totw-pitch{position:relative;max-width:520px;margin:0 auto;aspect-ratio:4/5;border-radius:22px;overflow:hidden;border:1px solid #47543c;
+  background:repeating-linear-gradient(0deg,#2c4a24 0 48px,#26421f 48px 96px);box-shadow:inset 0 0 80px #050805,0 20px 50px #0008;
+  display:flex;flex-direction:column;justify-content:space-around;padding:14% 4% 5%}
+.totw-pitch:before{content:"";position:absolute;inset:12px;border:2px solid #e9ffd055;border-radius:10px;pointer-events:none}
+.totw-pitch .halfway{position:absolute;left:12px;right:12px;top:50%;border-top:2px solid #e9ffd055}
+.totw-pitch .circle{position:absolute;width:26%;aspect-ratio:1;left:37%;top:calc(50% - 13% * .8);border:2px solid #e9ffd055;border-radius:50%}
+.totw-pitch .box{position:absolute;left:25%;right:25%;bottom:12px;height:20%;border:2px solid #e9ffd055;border-bottom:0}
+.totw-pitch .six{position:absolute;left:38%;right:38%;bottom:12px;height:9%;border:2px solid #e9ffd055;border-bottom:0}
+.totw-title{position:absolute;top:3.5%;left:0;right:0;text-align:center;z-index:2;font:900 clamp(1rem,4vw,1.5rem)/1 "Barlow Condensed",sans-serif;letter-spacing:.06em;color:#fff;text-shadow:0 2px 8px #000}
+.totw-title small{display:block;color:var(--green);font-size:.6em;letter-spacing:.14em;margin-top:3px}
+.totw-row{position:relative;z-index:1;display:flex;justify-content:space-evenly;align-items:flex-start}
+.totw-player{display:flex;flex-direction:column;align-items:center;width:30%;text-align:center}
+.totw-photo{width:clamp(58px,19vw,96px);aspect-ratio:1;border-radius:50%;overflow:hidden;background:#20261e;border:3px solid var(--green);
+  box-shadow:0 0 0 4px #b6ff3b22,0 0 26px #b6ff3b66}
+.totw-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.totw-name{margin-top:7px;font:900 clamp(.9rem,3.6vw,1.3rem)/1 "Barlow Condensed",sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#fff;text-shadow:0 2px 6px #000}
+.totw-note{margin-top:3px;font-size:clamp(.55rem,2.2vw,.7rem);font-weight:800;color:var(--green);text-shadow:0 1px 4px #000}
+.totw-gk .totw-photo{border-color:var(--gold);box-shadow:0 0 0 4px #ffd45b22,0 0 26px #ffd45b66}
+.totw-gk .totw-note{color:var(--gold)}
