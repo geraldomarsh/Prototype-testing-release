@@ -12,10 +12,7 @@ const MAX_PENDING = 40, MAX_IMG_BYTES = 120 * 1024;
 const DEFAULT_IMG = "images/players/default.svg";
 
 const SEED_PLAYERS = [
-  ["Geraldo", "The Finisher-ish", "ST", 87, 12, 5, 89, 86, 72, 31], ["Luca", "The Silk Merchant", "LW", 82, 9, 7, 91, 78, 83, 40],
-  ["Mpho", "The Sprinter", "RW", 80, 7, 3, 94, 76, 69, 38], ["Tariq", "The Playmaker", "CM", 78, 5, 6, 73, 67, 88, 65],
-  ["Dan", "The Wall (sometimes)", "CB", 76, 2, 2, 61, 54, 69, 84], ["Stefan", "Defensive Liability", "GK", 74, 1, 0, 49, 30, 55, 87],
-  ["Kyle", "Shot Stopper-ish", "GK", 72, 1, 1, 55, 35, 51, 82]];
+  ];
 
 class HttpError extends Error { constructor(status, message) { super(message); this.status = status; } }
 const sha = s => crypto.createHash("sha256").update(String(s)).digest("hex");
@@ -30,7 +27,7 @@ function newCode(db) {
 }
 function seed() {
   const db = {
-    site: { session: { date: "", venue: "Your usual pitch" }, result: { home: 6, away: 4, note: "A tactical masterclass. Allegedly." }, ownGoals: 2, cleanSheets: 4 },
+    site: { session: { date: "", venue: "Your usual pitch" }, result: { home: 0, away: 0, note: "A tactical masterclass. Allegedly." }, ownGoals: 2, cleanSheets: 4 },
     players: [], poll: { id: 1, title: "Who cooked today?", open: true, createdAt: Date.now() }, votes: [], sessions: {}, attempts: {}
   };
   SEED_PLAYERS.forEach((p, i) => db.players.push({ id: i + 1, name: p[0], nickname: p[1], position: p[2], rating: p[3], goals: p[4], assists: p[5],
