@@ -1,7 +1,7 @@
 const ADMIN_KEY = "diddyAdminToken";
 const defaultData = {
   session: { date: "", venue: "Your usual pitch" },
-  result: { home: 6, away: 4, note: "A tactical masterclass. Allegedly." },
+  result: { home: 0, away: 0, note: "A tactical masterclass. Allegedly." },
   players: [
     { id: 1, name: "Geraldo", nickname: "The Finisher-ish", position: "ST", rating: 87, image: "images/players/player-1.svg", goals: 12, assists: 5, pace: 89, shooting: 86, passing: 72, defending: 31 },
     { id: 2, name: "Luca", nickname: "The Silk Merchant", position: "LW", rating: 82, image: "images/players/player-2.svg", goals: 9, assists: 7, pace: 91, shooting: 78, passing: 83, defending: 40 },
