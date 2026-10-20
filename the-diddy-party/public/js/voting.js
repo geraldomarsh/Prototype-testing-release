@@ -26,27 +26,8 @@
     if (changed && typeof renderPlayers === "function") renderPlayers();   // re-order the cards: yours first
   }
 
-  function showWinner(poll) {
-    var box = $("cookWinner"); if (!box) return;
-    var top = 0; poll.options.forEach(function (o) { top = Math.max(top, poll.counts[o.id] || 0); });
-    if (poll.open || !top) { box.hidden = true; box.innerHTML = ""; return; }
-    var winners = poll.options.filter(function (o) { return (poll.counts[o.id] || 0) === top; });
-    var names = winners.map(function (w) { return esc(w.name); }).join(" &amp; ");
-    var cards = winners.map(function (w) {
-      var pl = window.diddyFindPlayer && window.diddyFindPlayer(w.name);
-      if (pl && window.diddyPlayerCard) return window.diddyPlayerCard(pl, { cls: "winner-card", badge: '<span class="crown-badge">👑 ' + (winners.length > 1 ? "CO-CHEF" : "CHEF") + "</span>" });
-      return '<article class="player-card winner-card"><span class="crown-badge">👑 CHEF</span><h3>' + esc(w.name) + "</h3></article>";
-    }).join("");
-    box.innerHTML = '<div class="winner-banner"><div class="winner-text"><p class="eyebrow">🗳️ THE VOTE IS IN</p>' +
-      "<h2>" + (winners.length > 1 ? "It's a tie: " : "") + "<span>" + names + "</span></h2>" +
-      '<p class="muted">' + esc(poll.title) + " · " + top + (top === 1 ? " vote" : " votes") + "</p></div>" +
-      '<div class="winner-cards">' + cards + "</div></div>";
-    box.hidden = false;
-  }
-
   function render(poll) {
     setMe(poll.me);
-    showWinner(poll);
     $("pollTitle").textContent = "🗳️ " + poll.title;
     $("pollTag").textContent = poll.open ? "MEMBERS ONLY" : "VOTING CLOSED";
     var signedIn = !!poll.me;
