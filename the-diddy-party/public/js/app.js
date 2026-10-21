@@ -20,6 +20,17 @@ let data = clone(defaultData);
 let loaded = false;   // don't draw the sample squad before we know whether the server has the real one
 let toastTimer;
 
+const UPDATE_VERSION = "2026-10-21"; // change this for every new update
+const modal1 = document.getElementById("updateModal");
+
+if (localStorage.getItem("seenUpdate") !== UPDATE_VERSION) {
+modal1.hidden = false;
+}
+document.getElementById("updateClose").onclick = () => {
+localStorage.setItem("seenUpdate", UPDATE_VERSION);
+modal1.hidden = true;
+};
+
 function adminToken() { try { return localStorage.getItem(ADMIN_KEY) || ""; } catch { return ""; } }
 function adminPost(path, body) {
   return fetch("/api" + path, { method: "POST", headers: { "Content-Type": "application/json", Authorization: "Bearer " + adminToken() }, body: JSON.stringify(body) })
