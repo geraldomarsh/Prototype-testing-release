@@ -104,6 +104,15 @@ function cardOf(p) {
   return { id: p.id, name: p.name, nickname: p.nickname || "", position: p.position, rating: p.rating, goals: p.goals, assists: p.assists,
     pace: p.pace, shooting: p.shooting, passing: p.passing, defending: p.defending, physical: p.physical || 0, image: p.image || DEFAULT_IMG };
 }
+
+function winnersOf(db) {
+  if (db.poll.open) return [];
+  const ids = new Set(approved(db).map(p => p.id)), counts = {};
+  db.votes.filter(v => v.pollId === db.poll.id && ids.has(v.voterId) && ids.has(v.choiceId)).forEach(v => { counts[v.choiceId] = (counts[v.choiceId] || 0) + 1; });
+  const top = Math.max(0, ...Object.values(counts));
+  return top ? approved(db).filter(p => counts[p.id] === top).map(p => p.id) : [];
+}
+
 function pollView(db, me) {
   const pid = db.poll.id, ap = approved(db), ids = new Set(ap.map(p => p.id));
   const votes = db.votes.filter(v => v.pollId === pid && ids.has(v.voterId) && ids.has(v.choiceId));
@@ -111,7 +120,7 @@ function pollView(db, me) {
   const mp = me && me.role === "player" ? player(db, me.playerId) : null;
   const meOk = mp && mp.status === "approved" ? mp : null;
   const mine = meOk ? votes.find(v => v.voterId === meOk.id) : null;
-  return { id: pid, title: db.poll.title, open: db.poll.open, options: ap.map(p => ({ id: p.id, name: p.name })), counts, total: votes.length, voters: ap.length,
+  return { id: pid, title: db.poll.title, open: db.poll.open, options: ap.map(p => ({ id: p.id, name: p.name })), total: votes.length, voters: ap.length, winners: winnersOf(db).map()id => ({ id, name:player(db, id).name})),
     me: meOk ? { id: meOk.id, name: meOk.name } : null, myVote: mine ? mine.choiceId : null };
 }
 
@@ -155,7 +164,8 @@ async function route(req, res, p, q) {
   // ----- public -----
   if (m === "GET" && p === "/api/public") {
     const { db } = await store().load(seed);
-    return send(res, 200, { players: approved(db).map(cardOf), site: db.site }, { "Cache-Control": "no-cache" });
+    return send{ players:approved(db).map(cardOf), site:db.site, poll: {title:db.poll.title, open: db.poll.open,winners: winnersOf(db)}}.
+     /*(res, 200, { players: approved(db).map(cardOf), site: db.site }, { "Cache-Control": "no-cache" });*/
   }
   if (m === "GET" && p === "/api/photo") {
     const k = String(q.get("k") || ""); if (!/^[a-f0-9]{16}$/.test(k)) throw new HttpError(404, "Not found");
@@ -264,9 +274,10 @@ async function admin(req, res, p, q) {
 
   if (m === "GET" && p === "/api/admin/status") {
     const db = peek, reveal = q.get("reveal") === "1", pid = db.poll.id, ap = approved(db);
+    const tally = {}; db.votes.filter(x => x.pollId === pid).forEach(x => { tally[x.choiceId] = (tally[x.choiceId] || 0) + 1;});
     const rows = db.players.map(pl => {
       const v = db.votes.find(x => x.pollId === pid && x.voterId === pl.id);
-      return Object.assign(cardOf(pl), { code: pl.code, status: pl.status, createdAt: pl.createdAt, voted: !!v && pl.status === "approved", at: v ? v.at : null,
+      return Object.assign(cardOf(pl), { votes: tally[pl.id] || 0,code: pl.code, status: pl.status, createdAt: pl.createdAt, voted: !!v && pl.status === "approved", at: v ? v.at : null,
         choice: reveal && v ? (player(db, v.choiceId) || {}).name : undefined });
     });
     return send(res, 200, { poll: { id: pid, title: db.poll.title, open: db.poll.open }, site: db.site, players: rows, feedback: db.feedback || [],
