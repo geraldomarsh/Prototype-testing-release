@@ -108,12 +108,15 @@
 .fb-meta{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-size:.7rem;color:var(--muted);margin-bottom:6px}
 .fb-msg{white-space:pre-wrap;overflow-wrap:anywhere;margin:0 0 8px}
 
-.footer-mark {
+/*.footer-mark {
   text-align:centre;
   font-size:1.6rem;
   padding:6px 0 30px;
   opacity:0.8
-}
+} */
 
+.footer-right{display:flex;flex-direction:column;align-items:center;gap:6px;margin-left:auto}
+.footer-mark{font-size:1.6rem;line-height:1;opacity:.8}
+.footer-right p{margin:0;text-align:center}
 
 
