@@ -119,4 +119,13 @@
 .footer-mark{font-size:1rem;line-height:1;opacity:.8}
 .footer-right p{margin:0;text-align:center}
 
+/* poll winner */
+.potd{margin-top:8px;padding:18px;border:1px solid #d4af37aa;border-radius:20px;background:linear-gradient(145deg,#2a2410,#151914 70%);box-shadow:0 0 40px #d4af3722}
+.potd h2{font:900 clamp(1.6rem,6vw,2.4rem)/1 "Barlow Condensed",sans-serif;margin:0 0 14px}
+.potd-cards{display:flex;flex-wrap:wrap;gap:12px}
+.potd-cards .player-card{width:min(260px,100%)}
+.player-card.is-winner{border-color:#d4af37;box-shadow:0 0 0 2px #d4af3766,0 0 28px #d4af3744}
+.win-badge{position:relative;display:block;width:max-content;margin:0 0 8px;z-index:2;background:#d4af37;color:#1a1500;font-weight:900;font-size:.62rem;letter-spacing:.08em;padding:4px 8px;border-radius:6px}
+.vote-winner{font-weight:800;margin:6px 0 0}
+
 
