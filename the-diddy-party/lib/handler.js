@@ -164,8 +164,7 @@ async function route(req, res, p, q) {
   // ----- public -----
   if (m === "GET" && p === "/api/public") {
     const { db } = await store().load(seed);
-    return send{ players:approved(db).map(cardOf), site:db.site, poll: {title:db.poll.title, open: db.poll.open,winners: winnersOf(db)}}.
-     /*(res, 200, { players: approved(db).map(cardOf), site: db.site }, { "Cache-Control": "no-cache" });*/
+    return send(res, 200, { players: approved(db).map(cardOf), site: db.site, poll: { title: db.poll.title, open: db.poll.open, winners: winnersOf(db) } }, { "Cache-Control": "no-cache" });
   }
   if (m === "GET" && p === "/api/photo") {
     const k = String(q.get("k") || ""); if (!/^[a-f0-9]{16}$/.test(k)) throw new HttpError(404, "Not found");
