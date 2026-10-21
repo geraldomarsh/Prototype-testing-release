@@ -120,7 +120,7 @@ function pollView(db, me) {
   const mp = me && me.role === "player" ? player(db, me.playerId) : null;
   const meOk = mp && mp.status === "approved" ? mp : null;
   const mine = meOk ? votes.find(v => v.voterId === meOk.id) : null;
-  return { id: pid, title: db.poll.title, open: db.poll.open, options: ap.map(p => ({ id: p.id, name: p.name })), total: votes.length, voters: ap.length, winners: winnersOf(db).map()id => ({ id, name:player(db, id).name})),
+  return { id: pid, title: db.poll.title, open: db.poll.open, options: ap.map(p => ({ id: p.id, name: p.name })), total: votes.length, voters: ap.length, winners: winnersOf(db).map(id => ({ id, name: player(db, id).name})),
     me: meOk ? { id: meOk.id, name: meOk.name } : null, myVote: mine ? mine.choiceId : null };
 }
 
