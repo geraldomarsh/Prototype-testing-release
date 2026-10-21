@@ -128,4 +128,20 @@
 .win-badge{position:relative;display:block;width:max-content;margin:0 0 8px;z-index:2;background:#d4af37;color:#1a1500;font-weight:900;font-size:.62rem;letter-spacing:.08em;padding:4px 8px;border-radius:6px}
 .vote-winner{font-weight:800;margin:6px 0 0}
 
+/*Popup announcement*/
+.modal1 { position: fixed; inset: 0; background: rgba(#ff4fa3);backdrop-filter: blur(4px);
+display: flex; align-items: center; justify-content: center; z-index: 9999; }
+.modal1[hidden] { display: none; }
+.modal-box1 { background: #ff4fa3; color: #111; padding: 20px; border-radius: 12px;
+max-width: 85%; width: 360px; font-style: oblique; font-weight: 600; box-shadow: 0 0 20px #ff4fa3; }
+.modal-box1 button { margin-top: 12px; width: 100%; padding: 10px;
+border: 0; border-radius: 8px; background: rgb(19, 215, 241, 0.852); color: #101010; }
+.version {
+    text-align: center;
+    font-size: 1rem;
+    font-style: oblique;
+    padding: 1px;
+    background-color: rgb(19, 215, 241, 0.852); color: #101010;
+}
+
 
