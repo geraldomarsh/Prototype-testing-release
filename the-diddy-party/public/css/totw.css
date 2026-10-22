@@ -1,0 +1,41 @@
+/* Team of the Week */
+.totw{margin-top:8px;padding:18px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,#1b2219,#151914 70%)}
+.totw h2{font:900 clamp(1.6rem,6vw,2.4rem)/1 "Barlow Condensed",sans-serif;margin:0 0 6px}
+.totw-layout{display:grid;gap:16px;margin-top:14px}
+@media(min-width:760px){.totw-layout.has-pool{grid-template-columns:minmax(260px,380px) 1fr;align-items:start}}
+.tw-formations{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 4px}
+.tw-formations button{border:1px solid #454d40;background:transparent;color:var(--white);border-radius:999px;padding:7px 14px;font-weight:800;font-size:.8rem}
+.tw-formations button[aria-pressed=true]{background:var(--green);color:#11150d;border-color:var(--green)}
+
+.tw-pitch{position:relative;width:100%;max-width:380px;aspect-ratio:3/4;border-radius:16px;overflow:hidden;border:2px solid #d9f2bd44;
+  background:repeating-linear-gradient(0deg,#2f5a2a 0 12.5%,#2a5026 12.5% 25%);box-shadow:inset 0 0 50px #0007;user-select:none;-webkit-user-select:none}
+.tw-pitch:before{content:"";position:absolute;left:0;right:0;top:50%;border-top:2px solid #e9ffd044}
+.tw-pitch:after{content:"";position:absolute;width:26%;aspect-ratio:1;border:2px solid #e9ffd044;border-radius:50%;left:37%;top:calc(50% - 13% * 1)}
+.tw-box{position:absolute;left:25%;right:25%;height:14%;border:2px solid #e9ffd044}
+.tw-box.top{top:0;border-top:0}.tw-box.bot{bottom:0;border-bottom:0}
+.tw-slot{position:absolute;width:24%;transform:translate(-50%,-50%);z-index:2;text-align:center;touch-action:manipulation}
+.tw-slot .tw-empty{display:grid;place-items:center;width:100%;aspect-ratio:1;border:2px dashed #e9ffd077;border-radius:50%;color:#e9ffd0aa;font-weight:900;background:#0003}
+.tw-slot.over .tw-empty,.tw-slot.over .tw-token{outline:3px solid var(--green);outline-offset:2px}
+.tw-slot.target .tw-empty{border-color:var(--green);color:var(--green);animation:twpulse 1s ease-in-out infinite}
+@keyframes twpulse{50%{background:#b6ff3b33}}
+
+.tw-token,.tw-chip{touch-action:manipulation;cursor:grab;-webkit-touch-callout:none;user-select:none;-webkit-user-select:none}
+.tw-token{display:block;width:100%}
+.tw-token img,.tw-chip img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%;border:2px solid var(--green);background:#10140f;pointer-events:none}
+.tw-token b{display:block;margin-top:3px;font:800 .72rem/1.05 "DM Sans",sans-serif;color:#fff;text-shadow:0 1px 3px #000;overflow-wrap:anywhere;pointer-events:none}
+.tw-token small{display:inline-block;margin-top:1px;background:#10120fcc;color:var(--green);font-weight:900;font-size:.62rem;padding:0 5px;border-radius:5px;pointer-events:none}
+.tw-final .tw-token{cursor:default}
+
+.tw-poolwrap h3{font:800 1.1rem "Barlow Condensed",sans-serif;margin:0 0 8px}
+.tw-pool{display:grid;grid-template-columns:repeat(auto-fill,minmax(74px,1fr));gap:10px}
+.tw-chip{display:block;text-align:center;border:1px solid #3b4632;background:#10140f;border-radius:12px;padding:7px 4px}
+.tw-chip img{width:52px;margin:0 auto}
+.tw-chip b{display:block;font-size:.72rem;margin-top:4px;line-height:1.05;overflow-wrap:anywhere;pointer-events:none}
+.tw-chip small{color:var(--muted);font-size:.6rem;pointer-events:none}
+.tw-chip.selected{border-color:var(--green);box-shadow:0 0 0 2px var(--green)}
+.tw-chip.dragging,.tw-token.dragging{opacity:.35}
+.tw-ghost{position:fixed;z-index:1000;width:70px;pointer-events:none;transform:translate(-50%,-60%) scale(1.1);filter:drop-shadow(0 10px 8px #000a);opacity:.95}
+.tw-ghost img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%;border:2px solid var(--green)}
+.tw-ghost b{display:block;text-align:center;font:800 .7rem "DM Sans",sans-serif;color:#fff;text-shadow:0 1px 3px #000}
+.tw-actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:12px}
+body.tw-dragging{user-select:none;-webkit-user-select:none;cursor:grabbing}
