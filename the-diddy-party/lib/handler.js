@@ -249,7 +249,8 @@ async function route(req, res, p, q) {
     });
     return send(res, out.status, out.body);
   }
-
+ 
+  if (p === "/api/team-week") return require("./totw").handle(req, res, p, q, H());
   // ----- admin -----
   if (m === "POST" && p === "/api/admin/login") {
     if (!process.env.ADMIN_CODE) throw new HttpError(500, "ADMIN_CODE isn't set on the server.");
@@ -285,7 +286,9 @@ async function admin(req, res, p, q) {
   if (m === "GET" && p === "/api/admin/export") {
     const out = JSON.parse(JSON.stringify(peek)); delete out.sessions; delete out.attempts;
     return send(res, 200, out);
-  }
+  } 
+   
+  if (p.startsWith("/api/admin/team-week")) return require("./totw").admin(req, res, p, q, H());
   const b = m === "POST" ? await readBody(req) : {};
   const done = o => send(res, o.status, o.body);
 
@@ -356,6 +359,8 @@ async function admin(req, res, p, q) {
   }));
   throw new HttpError(404, "Not found");
 }
+
+const H = () => ({ store, seed, mutate, send, readBody, authOf, approved, player, cardOf, HttpError });
 
 async function handle(req, res) {
   try {
