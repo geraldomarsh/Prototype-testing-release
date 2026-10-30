@@ -144,4 +144,6 @@ border: 0; border-radius: 8px; background: rgb(19, 215, 241, 0.852); color: #101
     background-color: rgb(19, 215, 241, 0.852); color: #101010;
 }
 
+.avatar-large{width:72px;height:72px;overflow:hidden}
+
 
