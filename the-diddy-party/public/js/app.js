@@ -106,6 +106,8 @@ function renderLeaderboard() {
   const scorer = sorted[0];
   setText("#topScorerName", scorer?.name || "No one yet");
   setText("#topScorerGoals", scorer?.goals ?? 0);
+  { const av = document.querySelector("#topScorerAvatar");
+    if (av) av.innerHTML = scorer && scorer.image ? `<img src="${escapeHTML(scorer.image)}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:50%">` : "⚡"; }
   setText("#totalGoals", data.players.reduce((sum, p) => sum + p.goals, 0));
   setText("#totalAssists", data.players.reduce((sum, p) => sum + p.assists, 0));
   setText("#cleanSheets", data.cleanSheets);
