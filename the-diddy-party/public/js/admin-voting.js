@@ -85,7 +85,7 @@
       var b = e.target.closest("button"); if (!b) return;
       var id = b.dataset.id, act = b.dataset.act;
       if (act === "copy") {
-        var invite = "Hey " + b.dataset.name + ", you're in The Diddy Party! Open " + location.origin + " , tap the sign-in box at the top and enter your code: " + b.dataset.code;
+        var invite = "Yooo " + b.dataset.name + ", Welcome to No Grass FC! Open " + location.origin + " , tap the sign-in box at the top and enter your code: " + b.dataset.code;
         (navigator.clipboard ? navigator.clipboard.writeText(invite) : Promise.reject()).then(function () { say("Invite message copied. Paste it into WhatsApp."); }).catch(function () { say(invite); });
       }
       if (act === "approve") api("/admin/players/" + id + "/approve", { method: "POST" }).then(function () { say("Approved. Use Copy invite to send their code."); return load(); }).catch(function (x) { say(x.message, true); });
