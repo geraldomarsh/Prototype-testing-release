@@ -8,7 +8,7 @@
   bar.setAttribute("aria-label", "Music player");
   bar.style.cssText = "position:fixed;left:12px;bottom:12px;z-index:50;display:flex;gap:6px;align-items:center;background:#191d18;border:1px solid #343b30;border-radius:999px;padding:6px 10px;box-shadow:0 6px 20px #0008;font:700 .8rem sans-serif;color:#f4f5ef";
   var b = "background:none;border:0;color:#b6ff3b;font-size:1.1rem;cursor:pointer;padding:2px 4px";
-  bar.innerHTML = '🎵 <button style="' + b + '" data-a="play" aria-label="Play">▶</button><button style="' + b + '" data-a="pause" aria-label="Pause">⏸</button><button style="' + b + '" data-a="stop" aria-label="Stop">⏹</button><input type="range" min="0" max="100" value="40" aria-label="Volume" style="width:70px;accent-color:#b6ff3b">';
+  bar.innerHTML = '<span id="musicHandle" title="Drag to move" style="cursor:grab;touch-action:none;user-select:none;padding:6px 8px">🎵</span><button style="' + b + '" data-a="play" aria-label="Play">▶</button><button style="' + b + '" data-a="pause" aria-label="Pause">⏸</button><button style="' + b + '" data-a="stop" aria-label="Stop">⏹</button><input type="range" min="0" max="100" value="40" aria-label="Volume" style="width:70px;accent-color:#b6ff3b">';
   document.body.appendChild(bar);
 
   bar.addEventListener("click", function (e) {
