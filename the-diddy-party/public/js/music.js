@@ -1,5 +1,5 @@
 (function () {
-  var SRC = "audio/theme.mp3", KEY = "diddyMusicOff";
+  var SRC = "audio/Kylian.WEBM", KEY = "diddyMusicOff";
   var a = new Audio(SRC); a.loop = true; a.volume = 0.4; a.preload = "auto";
   var off = false; try { off = localStorage.getItem(KEY) === "1"; } catch (e) {}
   function remember(v) { off = v; try { localStorage.setItem(KEY, v ? "1" : "0"); } catch (e) {} }
