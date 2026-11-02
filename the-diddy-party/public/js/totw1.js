@@ -13,7 +13,7 @@
   var esc = function (s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); };
   var rows = {};
   TOTW.forEach(function (p) { (rows[p.row] = rows[p.row] || []).push(p); });
-  var html = '<div class="totw-title">TEAM OF THE WEEK(Dummy Preview)<small>' + esc(WEEK) + '</small></div>' +
+  var html = '<div class="totw-title">TEAM OF THE WEEK<small>' + esc(WEEK) + '</small></div>' +
     '<div class="halfway"></div><div class="circle"></div><div class="box"></div><div class="six"></div>';
   Object.keys(rows).sort(function (a, b) { return a - b; }).forEach(function (r) {
     html += '<div class="totw-row">' + rows[r].map(function (p) {
