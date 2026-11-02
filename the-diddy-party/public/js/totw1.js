@@ -1,12 +1,12 @@
 /* Team of the Week. Edit WEEK and TOTW below each week.
    row 1 = top of the pitch (attack), row 2 = middle, row 3 = goalkeeper. Use as many as you like per row. */
 (function () {
-  var WEEK = "Week 12";
+  var WEEK = "Week 1";
   var TOTW = [
-    { name: "Ronaldo", role: "LW",image: "images/players/Ronaldo.png", row: 1 },
-    { name: "Suarez",    role: "ST",image: "images/players/Suarez.png", row: 1 },
-    { name: "Messi",    role: "RW", note:"🐐", image: "images/players/Messi.png", row: 1, gk: true},
-    { name: "Neymar",     role: "CAM",image: "images/players/Neymar.png", row: 1.5 }
+    { name: "Neymarzitho", role: "LW", note: "⚽", image: "images/players/Josh.png", row: 1 },
+    { name: "Madiba",    role: "ST",image: "images/players/default.svg", row: 1, gk: true },
+    { name: "Toka",    role: "RW", note:"✨", image: "/api/photo?k=865d4acee2d7150b", row: 1, gk: false},
+    { name: "Marsh",     role: "CB",image: "images/players/Marsh.png", row: 1.5 }
   ];
   var el = document.getElementById("totwPitch"); if (!el) return;
   var wk = document.getElementById("totwWeek"); if (wk) wk.textContent = WEEK;
