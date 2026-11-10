@@ -55,7 +55,7 @@
       return;
     }
     if (!view.me) {
-      root.innerHTML = '<p class="eyebrow">⭐ TEAM OF THE WEEK</p><h2>Pick your starting four</h2><p class="muted">Sign in with your access code at the top of the page to build your Team of the Week. 🔒 Picks stay secret until the manager closes the round.</p>';
+      root.innerHTML = '<p class="eyebrow">⭐ TEAM OF THE WEEK</p><h2>Pick your TEAM OF THE WEEK</h2><p class="muted">Sign in with your access code at the top of the page to build your Team of the Week. 🔒 Picks stay secret until the manager closes the round.</p>';
       return;
     }
     var placed = {}; slots.forEach(function (id) { if (id) placed[id] = 1; });
