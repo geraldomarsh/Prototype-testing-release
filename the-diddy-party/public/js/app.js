@@ -20,7 +20,7 @@ let data = clone(defaultData);
 let loaded = false;   // don't draw the sample squad before we know whether the server has the real one
 let toastTimer;
 
-const UPDATE_VERSION = "2026-11-10"; // change this for every new update
+const UPDATE_VERSION = "2026-11-12"; // change this for every new update
 const modal1 = document.getElementById("updateModal");
 
 if (localStorage.getItem("seenUpdate") !== UPDATE_VERSION) {
