@@ -3,9 +3,9 @@
 (function () {
   var WEEK = "Week 1";
   var TOTW = [
-    { name: "Neymarzitho", role: "LW", note: "⚽", image: "images/players/Josh.png", row: 1 },
-    { name: "Madiba",    role: "ST",image: "images/players/default.svg", row: 1, gk: true },
-    { name: "Toka",    role: "RW", note:"✨", image: "/api/photo?k=865d4acee2d7150b", row: 1, gk: false},
+    { name: "Pixie", role: "LW", note: "✨", image: "images/players/Pixie.png", row: 2, gk: true },
+    { name: "Etos",    role: "CAM",image: "images/players/Ethan.png", row: 1, gk: false },
+    { name: "Toka",    role: "RW", note: , image: "/api/photo?k=865d4acee2d7150b", row: 2, gk: false},
     { name: "Marsh",     role: "CB",image: "images/players/Marsh.png", row: 1.5 }
   ];
   var el = document.getElementById("totwPitch"); if (!el) return;
