@@ -1,5 +1,5 @@
 /* Service worker: keeps the site installable. Offline, it shows only the "something went wrong" screen. */
-const CACHE = "diddy-v3", OFFLINE = "/offline.html", PIC = "/icons/offline.png";
+const CACHE = "diddy-v3", OFFLINE = "/offline.html", PIC = "/images/Mbappe.png";
 self.addEventListener("install", e => {
   self.skipWaiting();
   e.waitUntil(caches.open(CACHE).then(c => Promise.all([c.add(OFFLINE), c.add(PIC).catch(() => {})])));
