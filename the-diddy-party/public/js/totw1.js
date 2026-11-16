@@ -4,7 +4,7 @@
   var WEEK = "Week 3";
   var TOTW = [
     { name: "Neymarzitho", role: "LW", note: "", image: "images/players/Josh.png", row: 1, gk: false},
-    { name: "Damco",    role: "CAM",image: "images/players/default.svg", row: 1.5, gk: false},
+    { name: "Damco",    role: "CM",image: "images/players/default.svg", row: 1.5, gk: false},
     { name: "Hemel Geberg",    role: "RW", note: "", image: "images/players/Alijan.png", row: 1, gk: false},
     { name: "Etos",     role: "CB",image: "images/players/Ethan.png", row: 2 }
   ];
