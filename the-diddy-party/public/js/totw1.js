@@ -1,7 +1,7 @@
 /* Team of the Week. Edit WEEK and TOTW below each week.
    row 1 = top of the pitch (attack), row 2 = middle, row 3 = goalkeeper. Use as many as you like per row. */
 (function () {
-  var WEEK = "Week 2";
+  var WEEK = "Week 3";
   var TOTW = [
     { name: "Neymarzitho", role: "LW", note: "", image: "images/players/Josh.png", row: 1, gk: false},
     { name: "Damco",    role: "CAM",image: "images/players/default.svg", row: 1.5, gk: false},
