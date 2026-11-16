@@ -3,10 +3,10 @@
 (function () {
   var WEEK = "Week 2";
   var TOTW = [
-    { name: "Pixie", role: "LW", note: "✨", image: "images/players/Pixie.png", row: 1, gk: true},
-    { name: "Etos",    role: "CAM",image: "images/players/Ethan.png", row: 1.5, gk: false},
-    { name: "Toka",    role: "RW", note: "", image: "/api/photo?k=865d4acee2d7150b", row: 1, gk: false},
-    { name: "Marsh",     role: "CB",image: "images/players/Marsh.png", row: 2 }
+    { name: "Neymarzitho", role: "LW", note: "", image: "images/players/Josh.png", row: 1, gk: false},
+    { name: "Damco",    role: "CAM",image: "images/players/default.svg", row: 1.5, gk: false},
+    { name: "Hemel Geberg",    role: "RW", note: "", image: "images/players/Alijan.png", row: 1, gk: false},
+    { name: "Etos",     role: "CB",image: "images/players/Ethan.png", row: 2 }
   ];
   var el = document.getElementById("totwPitch"); if (!el) return;
   var wk = document.getElementById("totwWeek"); if (wk) wk.textContent = WEEK;
